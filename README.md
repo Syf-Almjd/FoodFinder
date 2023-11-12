@@ -1,5 +1,4 @@
 
-```markdown
 # FoodFinder
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -12,8 +11,7 @@ FoodFinder is a mobile application that allows users to discover and find their 
 
 - **Dish Search:** Easily search for your favorite dishes and discover nearby restaurants that serve them.
 - **Cuisine Exploration:** Explore different cuisines and find the top-rated dishes in each category.
-- **User Reviews:** Read and contribute reviews to help others make informed decisions.
-- **Location-based Recommendations:** Get personalized recommendations based on your location and preferences.
+- **Favourites List:** Save the cuisines your like to your local storage.
 
 ## Installation
 
