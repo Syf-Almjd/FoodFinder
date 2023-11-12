@@ -1,0 +1,114 @@
+name: foodfinder
+description: Find the Dish you like!
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Icons
+  cupertino_icons: ^1.0.6
+  ionicons: ^0.2.2
+
+  # Networking
+#  dio: ^5.3.3
+
+  # State Management
+  flutter_bloc: ^8.1.2
+
+  # Others
+  flutter_hooks: 0.20.3
+  floor: ^1.4.1
+#  get_it: ^7.2.0
+#  equatable: ^2.0.5
+#  oktoast: ^3.3.1
+#  awesome_dio_interceptor: 1.0.0
+#  auto_route: 7.8.4
+  flutter_svg: ^2.0.9
+
+  #SaifAlmajd Packages
+
+  # UI Libraries
+  adaptive_theme: ^3.4.1
+  intro_slider: ^4.2.1
+  google_fonts: ^6.1.0
+  loading_animation_widget: ^1.2.0+4
+  hexcolor: ^3.0.1
+  toastification: 1.0.2
+
+  # Firebase
+  firebase_auth: 4.11.1
+  firebase_core: 2.19.0
+  firebase_database: 10.3.1
+  cloud_firestore: 4.11.0
+
+  # Flutter Core
+  provider: ^6.0.5
+  http: ^1.1.0
+  dart_secure: ^0.5.40
+  image_picker: ^1.0.4
+  shared_preferences: ^2.2.2
+
+  # Onboarding
+  introduction_screen: ^3.1.12
+
+  # Other
+  url_launcher: ^6.1.14
+
+
+
+#run flutter pub run flutter_launcher_icons:main
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  web:
+    generate: true
+    image_path: "assets/logo.png"
+
+
+dev_dependencies:
+
+  #SaifAlmajd Packages
+  device_preview: ^1.1.0
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: "^0.12.0"
+  flutter_lints: ^2.0.2
+  local_auth: ^2.1.7
+
+  #OTher
+  lint: ^2.0.1
+  auto_route_generator: 7.3.2
+  retrofit_generator: 8.0.2
+  floor_generator: ^1.4.2
+  build_runner: ^2.3.3
+
+flutter:
+  uses-material-design: true
+
+
+  assets:
+    - assets/
+    - assets/fonts/
+
+  fonts:
+    - family: poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+
+        - asset: assets/fonts/Poppins-Medium.ttf
+          style: normal
+          weight: 400
+
+        - asset: assets/fonts/Poppins-Italic.ttf
+          style: italic
+          weight: 400
