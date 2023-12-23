@@ -2,8 +2,10 @@
 class Assets {
   Assets._();
 
+  static const String assetsHomeAnimation = 'assets/homeAnimation.gif';
   static const String assetsLogo = 'assets/logo.png';
   static const String fontsPoppinsBold = 'assets/fonts/Poppins-Bold.ttf';
   static const String fontsPoppinsItalic = 'assets/fonts/Poppins-Italic.ttf';
   static const String fontsPoppinsMedium = 'assets/fonts/Poppins-Medium.ttf';
+
 }
