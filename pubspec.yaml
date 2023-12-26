@@ -90,6 +90,8 @@ dev_dependencies:
   retrofit_generator: 8.0.2
   floor_generator: ^1.4.2
   build_runner: ^2.3.3
+  google_mobile_ads: ^4.0.0
+
 
 flutter:
   uses-material-design: true

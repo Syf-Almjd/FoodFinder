@@ -43,12 +43,12 @@ FoodFinder is available on [Google Play](https://play.google.com/store/apps/deta
 
 ### Screenshots
 
-| Screenshot 1                                   | Screenshot 2 | Screenshot 3 |
-|------------------------------------------------|--------------|--------------|
+| Screenshot 1                                    | Screenshot 2                                    | Screenshot 3                                    |
+|-------------------------------------------------|-------------------------------------------------|-------------------------------------------------|
 | ![Screenshot 1](assets/screenshots/image1.jpeg) | ![Screenshot 2](assets/screenshots/image2.jpeg) | ![Screenshot 3](assets/screenshots/image3.jpeg) |
 
-| Screenshot 4 | Screenshot 5 |
-|--------------|--------------|
+| Screenshot 4                                    | Screenshot 5                                    |
+|-------------------------------------------------|-------------------------------------------------|
 | ![Screenshot 4](assets/screenshots/image4.jpeg) | ![Screenshot 5](assets/screenshots/image5.jpeg) |
 
 

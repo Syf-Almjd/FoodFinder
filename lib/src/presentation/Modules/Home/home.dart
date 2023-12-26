@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:foodfinder/src/config/utils/styles/app_colors.dart';
-import 'package:foodfinder/src/presentation/Modules/Home/Builders/AnimationDisplay.dart';
 
+import '../../../config/utils/managers/app_assets.dart';
 import '../../../data/Remote/RemoteHttpRequest.dart';
 import '../../../domain/models/FoodModel.dart';
-import '../Theme/ThemeHeader.dart';
-import 'Builders/FoodItem.dart';
+import '../../Shared/Components.dart';
+import '../Theme/ThemeButton.dart';
+import 'Builders/FoodICard.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -90,7 +91,13 @@ class _HomeState extends State<HomePage> {
             ],
           ),
         ),
-        const FoodAnimation(),
+        Container(
+          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          height: getHeight(5, context),
+          width: getWidth(90, context),
+          child: Image.asset(AppAssets.assetsHomeAnimation),
+        ),
         Container(
           padding: const EdgeInsets.only(left: 25.0, right: 25.0),
           width: double.infinity,
