@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:foodfinder/src/config/utils/managers/app_constants.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import '../../../data/local/localData_cubit/local_data_cubit.dart';
 import '../../../domain/models/FoodModel.dart';
+import '../../Ads/ad_helper.dart';
 import '../../Shared/Components.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -18,6 +20,38 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage> {
   var selectedCard = 'Food Country';
+  bool isLoaded = false;
+  BannerAd? _bannerAd;
+
+  @override
+  void initState() {
+    super.initState();
+    getAd();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _bannerAd?.dispose();
+  }
+
+  getAd() {
+    BannerAd(
+      adUnitId: AdHelper.bannerAdUnitId,
+      request: const AdRequest(),
+      size: AdSize.banner,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+        },
+        onAdFailedToLoad: (ad, err) {
+          ad.dispose();
+        },
+      ),
+    ).load();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +200,9 @@ class _DetailsPageState extends State<DetailsPage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 40.0),
+                  const SizedBox(height: 20.0),
+                  if (_bannerAd != null) adWidget(),
+                  const SizedBox(height: 20.0),
                   SizedBox(
                     height: getHeight(5, context),
                     width: getWidth(90, context),
@@ -260,6 +296,17 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                   )
                 ])));
+  }
+
+  Widget adWidget() {
+    return Align(
+      alignment: Alignment.topCenter,
+      child: SizedBox(
+        width: _bannerAd!.size.width.toDouble(),
+        height: _bannerAd!.size.height.toDouble(),
+        child: AdWidget(ad: _bannerAd!),
+      ),
+    );
   }
 
   selectCard(cardTitle) {

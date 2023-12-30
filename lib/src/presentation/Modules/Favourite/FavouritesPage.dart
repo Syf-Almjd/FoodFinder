@@ -78,7 +78,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // if (_bannerAd != null) adWidget(),
+              if (_bannerAd != null) adWidget(),
               getCube(1, context),
               Text(
                 "Favorites",
