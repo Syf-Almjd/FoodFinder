@@ -1,13 +1,31 @@
 workflows:
-  version: 2
-  publish:
-    name: Publish to Google Play
-    groups:
-      - GooglePlay
+  android-build-and-publish:
+    name: Android Build and Publish
     environment:
-      vars:
-        - GOOGLE_PLAY_JSON_KEY: $GOOGLE_PLAY_JSON_KEY
-
+      groups:
+        - keystore # Replace with your keystore group name
+      android_keystore_password: $KEYSTORE_PASSWORD
+      android_keystore_key_alias: $KEYSTORE_KEY_ALIAS
+      android_keystore_key_password: $KEYSTORE_KEY_PASSWORD
+      gcloud_service_account_credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS # For Google Play publishing
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+          source: true
     scripts:
-      - flutter build appbundle
-      - cm publish
+      - name: Build Android app
+        script: |
+          ./gradlew assembleRelease
+    artifacts:
+      - app/build/outputs/**/*.apk
+    publishing:
+      # Choose one of the following publishing options:
+
+      # Option 1: Google Play
+      - google_play:
+          track: production # Replace with desired track (internal, alpha, beta, production)
+          service_account_credentials: $gcloud_service_account_credentials
+

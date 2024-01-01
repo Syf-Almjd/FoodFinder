@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:toastification/toastification.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -16,15 +15,6 @@ SizedBox getCube(int percent, context) {
 
 double getWidth(int percent, context) {
   return (MediaQuery.of(context).size.width * (percent / 100)).toDouble();
-}
-
-Widget loadingAnimation({Widget? loadingType}) {
-  if (loadingType != null) {
-    return loadingType;
-  } else {
-    return Center(
-        child: LoadingAnimationWidget.waveDots(color: Colors.blue, size: 30));
-  }
 }
 
 //Show a toast
