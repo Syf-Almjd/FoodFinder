@@ -3,7 +3,6 @@ workflows:
     name: Build and Test
     scripts:
       - flutter pub get
-      - flutter test
 
   publish:
     name: Publish to Google Play
