@@ -1,11 +1,9 @@
 workflows:
-  build:
-    name: Build and Test
-    scripts:
-      - flutter pub get
-
+  version: 2
   publish:
     name: Publish to Google Play
+    groups:
+      - GooglePlay
     environment:
       vars:
         - GOOGLE_PLAY_JSON_KEY: $GOOGLE_PLAY_JSON_KEY
