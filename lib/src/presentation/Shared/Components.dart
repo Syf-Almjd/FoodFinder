@@ -21,7 +21,7 @@ double getWidth(int percent, context) {
 void showToast(String text, context) => toastification.show(
       context: context,
       title: text,
-      alignment: Alignment.topCenter,
+      alignment: Alignment.bottomRight,
       primaryColor: Colors.green,
       autoCloseDuration: const Duration(seconds: 2),
     );

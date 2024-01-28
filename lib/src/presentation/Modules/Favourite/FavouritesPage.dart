@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:foodfinder/src/config/utils/managers/app_constants.dart';
 import 'package:foodfinder/src/data/local/localData_cubit/local_data_cubit.dart';
@@ -25,7 +26,9 @@ class _FavouritesPageState extends State<FavouritesPage> {
   void initState() {
     super.initState();
     getLocalData();
-    getAd();
+    if (!kIsWeb) {
+      getAd();
+    }
   }
 
   @override
@@ -78,14 +81,15 @@ class _FavouritesPageState extends State<FavouritesPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (_bannerAd != null) adWidget(),
+              if (_bannerAd != null && !kIsWeb) adWidget(),
               getCube(1, context),
               Text(
                 "Favorites",
                 style: TextStyle(
                     color: Theme.of(context).textTheme.titleLarge?.color,
                     fontWeight: FontWeight.bold,
-                    fontSize: getWidth(10, context)),
+                    fontSize:
+                        kIsWeb ? getWidth(3, context) : getWidth(10, context)),
                 textAlign: TextAlign.left,
               ),
               Text(
@@ -93,7 +97,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     color: Colors.grey,
-                    fontSize: getWidth(4, context)),
+                    fontSize:
+                        kIsWeb ? getWidth(1, context) : getWidth(4, context)),
                 textAlign: TextAlign.left,
               ),
             ],

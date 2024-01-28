@@ -15,7 +15,9 @@ class _NavigationControllerState extends State<NavigationController> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    const HomePage(),
+    const HomePage(
+      isWeb: false,
+    ),
     const FavouritesPage(),
   ];
 

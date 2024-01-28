@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "foodfinder-ec"
+  },
+  "targets": {
+    "foodfinder-ec": {
+      "hosting": {
+        "foodfinder-plus": [
+          "foodfinder-plus"
+        ]
+      }
+    }
+  }
+}

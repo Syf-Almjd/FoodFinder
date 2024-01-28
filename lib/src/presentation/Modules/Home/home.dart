@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodfinder/src/config/utils/styles/app_colors.dart';
+import 'package:foodfinder/src/presentation/Modules/Favourite/FavouritesPage.dart';
 
 import '../../../config/utils/managers/app_assets.dart';
 import '../../../data/Remote/RemoteHttpRequest.dart';
@@ -9,7 +10,9 @@ import '../Theme/ThemeButton.dart';
 import 'Builders/FoodICard.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final bool isWeb;
+
+  const HomePage({super.key, required this.isWeb});
 
   @override
   State<HomePage> createState() => _HomeState();
@@ -84,6 +87,8 @@ class _HomeState extends State<HomePage> {
                 height: 25.0,
                 width: 25.0,
               ),
+              if (widget.isWeb) getFavPage(),
+              getCube(2, context),
               const ThemeHeader(),
               const SizedBox(
                 width: 20,
@@ -98,9 +103,11 @@ class _HomeState extends State<HomePage> {
           width: getWidth(90, context),
           child: Image.asset(AppAssets.assetsHomeAnimation),
         ),
+        if (widget.isWeb) getCube(2, context),
         Container(
           padding: const EdgeInsets.only(left: 25.0, right: 25.0),
           width: double.infinity,
+          alignment: Alignment.centerLeft,
           height: 60.0,
           child: TextField(
             onChanged: (value) {
@@ -186,5 +193,27 @@ class _HomeState extends State<HomePage> {
     }
     // Return a placeholder widget or an empty container if data is missing.
     return Container();
+  }
+
+  getFavPage() {
+    return IconButton(
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Scaffold(
+                  appBar: AppBar(
+                    backgroundColor: Colors.transparent,
+                    leading: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: const Icon(Icons.arrow_back_ios_outlined),
+                    ),
+                  ),
+                  body: const FavouritesPage())));
+        },
+        icon: const Icon(
+          Icons.favorite_border,
+          color: Colors.red,
+        ));
   }
 }
