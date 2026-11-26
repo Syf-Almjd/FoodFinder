@@ -72,6 +72,6 @@ jobs:
           target: google_apis
           disable-animations: true
           script: |
-            bash scripts/launch_check.sh com.mjd.foodfinder
+            adb install -r build/app/outputs/flutter-apk/app-debug.apk
             bash scripts/ff_flow.sh
             bash scripts/release_check.sh com.mjd.foodfinder
