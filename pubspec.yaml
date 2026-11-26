@@ -19,7 +19,7 @@ dependencies:
   flutter_bloc: ^8.1.2
 
   # UI Libraries
-  adaptive_theme: ^3.4.1
+  adaptive_theme: ^3.8.0
   intro_slider: ^4.2.1
   toastification: 1.0.2
 
