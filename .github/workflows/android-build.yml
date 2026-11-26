@@ -69,4 +69,6 @@ jobs:
           arch: x86_64
           target: google_apis
           disable-animations: true
-          script: bash scripts/launch_check.sh com.mjd.foodfinder
+          script: |
+            bash scripts/launch_check.sh com.mjd.foodfinder
+            bash scripts/ff_flow.sh
