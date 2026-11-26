@@ -22,7 +22,7 @@ jobs:
       - run: flutter build apk --debug
       - run: flutter build appbundle --release
       - name: Show target SDK of the release bundle manifest
-        run: grep -rh "targetSdkVersion" build/app/intermediates/merged_manifests/release || true
+        run: grep -rhE "targetSdkVersion|uses-permission" build/app/intermediates/merged_manifests/release | sed 's/^ *//' | sort -u || true
       - name: Check 16 KB page alignment of native libraries (64-bit)
         run: |
           rm -rf /tmp/aabx && mkdir -p /tmp/aabx
