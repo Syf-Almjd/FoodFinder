@@ -12,6 +12,16 @@ subprojects {
     def newSubprojectBuildDir = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
+// Old plugins ship with a low compileSdk; raise it so their AndroidX deps resolve.
+subprojects {
+    afterEvaluate { p ->
+        if (p.hasProperty("android") && p.name != "app") {
+            p.android {
+                compileSdk = 36
+            }
+        }
+    }
+}
 subprojects {
     project.evaluationDependsOn(":app")
 }
