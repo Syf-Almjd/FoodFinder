@@ -7,7 +7,6 @@ adb shell am force-stop $P
 adb shell monkey -p $P -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1
 sleep 14; snap 1_home
 adb shell input tap 160 173; sleep 1; adb shell input text "pan"; sleep 1; adb shell input keyevent 66; snap 2_search
-adb shell input keyevent 4; sleep 1
 adb shell input tap 140 245; snap 3_details
 adb shell input keyevent 4; sleep 2; snap 4_back
 adb shell input tap 248 252; snap 5_favorite_tapped
