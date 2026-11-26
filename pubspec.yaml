@@ -25,7 +25,6 @@ dependencies:
 
   # Flutter Core
   http: ^1.1.0
-  dart_secure: ^0.5.40
   shared_preferences: ^2.2.2
 
   # Onboarding
